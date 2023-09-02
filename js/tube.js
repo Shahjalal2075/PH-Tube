@@ -1,5 +1,5 @@
 const loadUserInfo = async(catid) =>{
-    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`);
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${catid}`);
     const data = await res.json();
     const info = data.data;
     //console.log(info);
@@ -16,18 +16,45 @@ const loadCategory = async() =>{
 
 const displayCategoryButton = categoryName => {
     const buttonContainer = document.getElementById('button-container');
+    loadUserInfo(1000);
     categoryName.forEach(cat => {
-        //console.log(cat);
+        console.log(cat);
 
         const button = document.createElement('button');
         button.classList = `text-sm font-medium text-[#252525b3] rounded bg-[#25252526] px-6 py-2 mx-3`;
         button.innerText=cat.category;
+        button.addEventListener('click',function(){
+            console.log(cat.category_id);
+            loadUserInfo(cat.category_id);
+        });
         buttonContainer.appendChild(button);
     });
 }
 
 const displayAll = info => {
+    console.log(info.length);
+    
+    const emptyCheck = document.getElementById('empty-add');
+    if(info.length===0)
+    {
+        emptyCheck.innerHTML=`
+        <div class="mx-auto w-full mt-10">
+                <div class="">
+                    <div class="flex justify-center">
+                        <img src="images/icon.png" alt="">
+                    </div>
+                    <h2 class="text-center text-site-black font-bold text-2xl mt-8">Oops!! Sorry, There is no<br>content here</h2>
+                </div>
+            </div>
+        `;
+    }
+    else{
+        emptyCheck.innerHTML=``;
+    }
+    /* const emptyCheck = document.getElementById('empty-add');
+    emptyCheck.innerHTML */
     const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML=``;
     info.forEach(det => {
         
         
@@ -85,4 +112,3 @@ const displayAll = info => {
 
 
 loadCategory();
-loadUserInfo();
