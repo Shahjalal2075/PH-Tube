@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container mx-auto">
+    <main>
+        <div>
+            <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-200 my-4">
+                <div class="collapse-title text-xl font-medium">
+                    Discuss the scope of var, let, and const
+                </div>
+                <div class="collapse-content"> 
+                  <p>In JavaScript, var, let, and const are used to declare variables, but they have different scopes and behaviors. Understanding the scope of these keywords is crucial for writing clean and bug-free code.
+    
+                    var:
+                    Function Scope: Variables declared with var are function-scoped, meaning they are only accessible within the function in which they are defined. If declared outside of any function, they become global variables.
+                    Hoisting: var declarations are hoisted to the top of their containing function or global scope. This means that the variable is available throughout the function, even before it's declared in the code.
+                    No Block Scope: Unlike let and const, var does not have block-level scope. It doesn't respect block boundaries, such as if statements or loops.
+                    Not Recommended: Due to its hoisting behavior and lack of block scope, var is generally not recommended for modern JavaScript development. It can lead to unexpected bugs and make it harder to reason about your code.
+                    
+                    let:
+                    Block Scope: Variables declared with let are block-scoped, which means they are confined to the block (e.g., if statements, loops, or function blocks) in which they are defined. They are not accessible outside of that block.
+                    Hoisting: Like var, let declarations are hoisted but not initialized. This means you can't access the variable before its declaration.
+                    Reassignment: Variables declared with let can be reassigned values after their initial declaration.
+                    
+                    const:
+                    Block Scope: Like let, variables declared with const are block-scoped and only accessible within the block in which they are defined.
+                    Immutability: Variables declared with const are constant, meaning their value cannot be changed after initialization. However, for objects and arrays, the reference to the object or array is constant, but the internal properties or elements can be modified.
+                    Hoisting: const declarations are also hoisted but not initialized.</p>
+                </div>
+              </div>
+    
+              <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-200 my-4">
+                <div class="collapse-title text-xl font-medium">
+                    Tell us the use cases of null and undefined
+                </div>
+                <div class="collapse-content"> 
+                  <p>In JavaScript, null and undefined are two distinct values used to represent the absence or unavailability of a value, but they are used in slightly different contexts. Here are their common use cases:
+    
+                    undefined:
+                    Implicit Default Value: When a variable is declared but not assigned a value, it is automatically assigned the value undefined.
+                    Function Parameters: If a function is called with fewer arguments than it expects, the missing parameters are assigned the value undefined.
+                    Property Access: If you try to access an object property that doesn't exist, the result is undefined.
+                    Return Value: If a function doesn't explicitly return a value, it implicitly returns undefined.
+                    
+                    null:
+                    Explicit Absence: null is used when you want to explicitly indicate that a variable or object property should have no value or is intentionally empty.
+                    Assigning to Clear a Reference: You can assign null to a variable or object property to release memory or clear a reference when you no longer need it.
+                    
+                    </p>
+                </div>
+              </div>
+    
+              <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-200 my-4">
+                <div class="collapse-title text-xl font-medium">
+                    What do you mean by REST API?
+                </div>
+                <div class="collapse-content"> 
+                  <p>REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints used for designing and interacting with web services. REST is not a protocol; it's a style of architecture that leverages the existing HTTP protocol for communication. RESTful APIs are widely used for building web services due to their simplicity and scalability. Here are the key characteristics and concepts associated with REST APIs:
+    
+                    1. Statelessness: In a RESTful system, each request from a client to the server must contain all the information needed to understand and process the request. The server should not store any client state between requests. This statelessness makes REST APIs highly scalable and easy to manage.
+                    
+                    2. Resources: Resources are the core abstraction in REST. Each resource is identified by a unique URI (Uniform Resource Identifier). Resources can represent real-world entities like users, products, or abstract concepts like sessions or transactions.
+                    
+                    3. HTTP Methods: REST APIs use standard HTTP methods (GET, POST, PUT, DELETE, etc.) to perform operations on resources. Each HTTP method has a specific meaning:
+                       GET: Retrieve resource data.
+                       POST: Create a new resource.
+                       PUT: Update an existing resource or create if it doesn't exist.
+                       DELETE: Remove a resource.
+                       PATCH: Partially update a resource.
+                       
+                    4. Uniform Interface: REST APIs have a consistent and uniform interface, which means that the same HTTP methods and status codes are used consistently across different resources and services.
+                    
+                    5. Representation: Resources can have multiple representations, such as JSON, XML, or HTML. Clients can request a specific representation using the `Accept` header in the HTTP request.
+                    
+                    6. Stateless Communication: Each interaction between the client and server is independent and stateless. The server does not store any client-specific data between requests.
+                    
+                    7. Layered System: REST APIs can be designed in a layered architecture where intermediaries like load balancers, caching servers, and proxies can be placed between the client and server without affecting the interaction between them.
+                    
+                    8. Client-Server Architecture: REST enforces a clear separation between the client and server. The client is responsible for the user interface and user experience, while the server handles data storage and processing.
+                    
+                    9. Idempotence: Some HTTP methods (GET, PUT, DELETE) are idempotent, meaning that making the same request multiple times will have the same effect as making it once. This property is crucial for reliability in distributed systems.
+                    
+                    Overall, REST APIs provide a standardized way for different software components to communicate over the internet. They are widely used in web and mobile application development, allowing clients to perform various operations on server resources through simple HTTP requests.</p>
+                </div>
+              </div>
+        </div>
+    </main>
+</body>
+</html>

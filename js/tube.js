@@ -83,5 +83,6 @@ const displayAll = info => {
 }
 
 
+
 loadCategory();
 loadUserInfo();
